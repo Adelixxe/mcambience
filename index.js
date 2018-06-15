@@ -31,7 +31,7 @@ bot.on("message", function (message) {
     }
 });
 bot.on('message', message => {
-    if (message.content.startsWith('$jazzamb')) {
+    if (message.content.startsWith('$amb')) {
         console.log('Got a song request!');
         const voiceChannel = message.member.voiceChannel;
 
