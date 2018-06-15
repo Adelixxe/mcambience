@@ -10,7 +10,7 @@ var cli = new Discord.Client({autoReconnect:true});
 
 bot.commands = new Discord.Collection();
 
-const url = 'https://youtube.com/watch?v=_sI_Ps7JSEk'
+const url = 'https://youtu.be/ZSrVznkaMEM'
 
 bot.on('ready', () => {
     console.log('McAmbience is ready');
