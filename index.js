@@ -17,7 +17,7 @@ bot.on('ready', () => {
 });
 
 bot.on('ready', () => {
-    bot.user.setPresence(({ game: { name: " Jazz Lounge", type: 2}}));
+    bot.user.setPresence(({ game: { name: " McJazz", type: 2}}));
 });
 
 bot.on("message", function (message) {
