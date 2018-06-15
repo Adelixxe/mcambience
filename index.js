@@ -6,6 +6,8 @@ const fs = require('fs');
 const ddiff = require('return-deep-diff');
 const ytdl = require('ytdl-core');
 
+const streamOptions = { seek: 0, volume: 0.1 };
+
 var cli = new Discord.Client({autoReconnect:true});
 
 bot.commands = new Discord.Collection();
