@@ -40,12 +40,11 @@ bot.on('message', message => {
         voiceChannel.join()
 
         .then (connection => {
-            const stream = message.guild.voiceConnection.playStream(ytdl(url, { filter: 'audioonly' }))
             music();
         })
-
+        
         function music() {
-            const stream = Connection.playStream(stream)
+            const stream = message.guild.voiceConnection.playStream(ytdl(url, { filter: 'audioonly' }), streamOptions) 
             .once('end', () => music());
         }
     }
