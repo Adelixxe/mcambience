@@ -48,7 +48,7 @@ bot.on('message', message => {
             .once('end', () => music());
         }
     }
-  if (message.content.startsWith('*stp')) {
+  if (message.content.startsWith('*stop')) {
       console.log('Stop');
       if (!message.guild.member(bot.user).permissions.has("ADMINISTRATOR")) {
           message.member.voiceChannel.end()
@@ -59,7 +59,7 @@ bot.on('message', message => {
           message.member.voiceChannel.end()
           message.delete(10000)
       }}
-  if (message.content.startsWith('*lve')) {
+  if (message.content.startsWith('*leave')) {
       console.log('leave');
       if (!message.guild.member(bot.user).permissions.has("ADMINISTRATOR")) {
           message.member.voiceChannel.leave()
