@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const path = require('path');
-const prefix = "/";
+const prefix = "*";
 const fs = require('fs');
 const ddiff = require('return-deep-diff');
 const ytdl = require('ytdl-core');
