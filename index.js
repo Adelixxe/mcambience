@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client(); 
+const bot = new Discord.Client();
 const path = require('path');
 const prefix = "/";
 const fs = require('fs');
@@ -27,11 +27,11 @@ bot.on("message", function (message) {
     if (!message.content.startsWith(prefix)) return;
 
     if (message.content.startsWith(prefix)) {
-        message.delete(100)
+        message.delete(1000)
     }
 });
 bot.on('message', message => {
-    if (message.content.startsWith('/amb')) {
+    if (message.content.startsWith('*amb')) {
         console.log('Got a song request!');
         const voiceChannel = message.member.voiceChannel;
 
@@ -42,13 +42,37 @@ bot.on('message', message => {
         .then (connection => {
             music();
         })
-        
+
         function music() {
-            const stream = message.guild.voiceConnection.playStream(ytdl(url, { filter: 'audioonly' }), streamOptions) 
+            const stream = message.guild.voiceConnection.playStream(ytdl(url, { filter: 'audioonly' }), streamOptions)
             .once('end', () => music());
         }
     }
+  if (message.content.startsWith('*stp')) {
+      console.log('Stop');
+      if (!message.guild.member(bot.user).permissions.has("ADMINISTRATOR")) {
+          message.member.voiceChannel.end()
+          message.delete(10000)
+      }
+
+      if (message.guild.member(bot.user).permissions.has("ADMINISTRATOR")) {
+          message.member.voiceChannel.end()
+          message.delete(10000)
+      }}
+  if (message.content.startsWith('*lve')) {
+      console.log('leave');
+      if (!message.guild.member(bot.user).permissions.has("ADMINISTRATOR")) {
+          message.member.voiceChannel.leave()
+          message.delete(10000)
+      }
+
+      if (message.guild.member(bot.user).permissions.has("ADMINISTRATOR")) {
+          message.member.voiceChannel.leave()
+          message.delete(10000)
+      }
+
+
+  }
 });
 
 bot.login(process.env.BOT_TOKEN);
-
