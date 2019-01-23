@@ -61,18 +61,7 @@ bot.on('message', message => {
       }}
   if (message.content.startsWith('*leave')) {
       console.log('leave');
-      if (!message.guild.member(bot.user).permissions.has("ADMINISTRATOR")) {
-          if (!voiceChannel) return msg.reply('Not in a voice channel.');
-          voiceChannel.leave();
-          message.delete(10000)
-      }
-
-      if (message.guild.member(bot.user).permissions.has("ADMINISTRATOR")) {
-          message.member.voiceChannel.leave()
-          message.delete(10000)
-      }
-
-
+      voiceChannel.leave();
   }
 });
 
